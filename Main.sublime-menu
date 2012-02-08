@@ -1,0 +1,14 @@
+[
+    {
+        "id": "tools",
+        "caption": "Tools",
+        "children":
+        [
+            {
+                "caption": "Sonar...",
+                "command": "show_overlay",
+                "args": {"overlay": "command_palette", "text": "Sonar: " }
+            }
+        ]
+    }
+]

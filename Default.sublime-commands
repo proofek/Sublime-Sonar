@@ -1,0 +1,6 @@
+[
+    {
+        "caption": "Sonar: Show violations",
+        "command": "sonar_show_violations_this_class"
+    }
+]
