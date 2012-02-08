@@ -1,0 +1,53 @@
+<!--
+    sonar-pom
+        A time-saving device for creating sonar pom.xml file
+
+    HOW TO USE
+        In a file named pom.xml, simply type the following:
+
+            sonar-pom<TAB>
+        
+        and then fill in as follows:
+        * group Id, ie. org.myProject
+        * project name
+        * build directory (by default build)
+        * source directory (by default ./src)
+        * tests directory (by default ./tests)
+        * scm type, ie. svn, git (by default git)
+        * scm url, ie. https://github.com/proofek/
+        * CI type, ie. Bamboo, Jenkins (be default Jenkins)
+        * CI url, ie. http://bamboo.ci.codehaus.org/browse/
+-->
+<snippet>
+    <content><![CDATA[<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>${1:group-Id}</groupId>
+    <artifactId>${2:project-name}</artifactId>
+    <name>${2:project-name}</name>
+    <version>1.0</version>
+    <packaging>pom</packaging>
+    <build>
+        <directory>${3:build}</directory>
+        <sourceDirectory>${4:./src}</sourceDirectory>
+        <testSourceDirectory>${5:./tests}</testSourceDirectory>
+    </build>
+    <properties>
+        <sonar.language>php</sonar.language>
+    </properties>
+    <scm>
+        <connection>scm:${6:git}:${7:[scm-url]}/${2:project-name}</connection>
+        <developerConnection>scm:${6:git}:${7:scm-url}/${2:project-name}</developerConnection>
+        <url>${7:scm-url}/${2:project-name}</url>
+    </scm>
+    <ciManagement>
+        <system>${8:Jenkins}</system>
+        <url>${9:ci-url}/job/${2:project-name}</url>
+    </ciManagement>
+</project>
+]]></content>
+    <!-- Optional: Tab trigger to activate the snippet -->
+    <tabTrigger>sonar-pom</tabTrigger>
+    <!-- Optional: Description to show in the menu -->
+    <description>Create a sonar pom.xml file</description>
+</snippet>
